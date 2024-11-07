@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compte à rebours - Collègue Théo</title>
+    <style>
+        body {
+            font-family: 'Permanent Marker', cursive;
+            text-align: center;
+            background: linear-gradient(to bottom, #87CEEB, #ADD8E6);
+            padding: 40px;
+        }
+
+        h1 {
+            color: #4B0082;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        #countdown {
+            font-size: 72px;
+            font-weight: bold;
+            color: #FF69B4;
+            margin-bottom: 20px;
+            text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        #time-remaining {
+            font-size: 36px;
+            color: #8B008B;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #FF69B4;
+            border-radius: 50%;
+            animation: confetti-fall 5s linear infinite;
+        }
+
+        @keyframes confetti-fall {
+            0% {
+                transform: translate(0, -100px) rotate(0deg);
+            }
+
+            100% {
+                transform: translate(random(1000) - 500px, 600px) rotate(360deg);
+            }
+        }
+
+        .college-gif {
+            max-width: 300px;
+            margin-top: 20px;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <h1>Compte à rebours jusqu'au départ du collègue Théo</h1>
+    <div id="countdown">156 jours</div>
+    <div id="time-remaining">Restant : 00:00:00</div>
+    <img src="
+  https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ2R6a3VrajB2OTRxN3ZlbmF3aGtoN3liZDFzems2azk3ZXZtMnl2YSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gqBFypqpBANi9FbfhW/giphy.gif"
+        alt="Collègue Théo" class="collegue-gif">
+
+    <script>
+        // Définir la date cible (ici, le 1er mars 2025)
+        const targetDate = new Date('2025-03-01');
+
+        // Fonction pour mettre à jour l'affichage du compte à rebours
+        function updateCountdown() {
+            const now = new Date();
+            const timeRemaining = targetDate.getTime() - now.getTime();
+
+            if (timeRemaining <= 0) {
+                document.getElementById('countdown').textContent = '0 jours';
+                document.getElementById('time-remaining').textContent = 'Départ du collège !';
+                confettiAnimation();
+                return;
+            }
+
+            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+            document.getElementById('countdown').textContent = `${days} jours`;
+            document.getElementById('time-remaining').textContent = `Restant : ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        // Fonction pour déclencher l'animation de confettis
+        function confettiAnimation() {
+            const container = document.body;
+            const confettiCount = 50;
+
+            for (let i = 0; i < confettiCount; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                container.appendChild(confetti);
+            }
+        }
+
+        // Mettre à jour le compte à rebours toutes les secondes
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+
+</html>
