@@ -79,7 +79,7 @@
   <div class="confetti"></div>
   <div class="confetti"></div>
   <div class="confetti"></div>
-  <audio id="background-audio" src="./music.mp3" autoplay muted loop></audio>
+  <audio id="background-audio" src="./music.mp3" ></audio>
 
   <h1>Compte à rebours jusqu'au départ du Collègue Théo</h1>
   <div id="countdown">13456789 secondes</div>
@@ -132,11 +132,7 @@
         container.appendChild(confetti);
       }
     }
-
-    document.body.addEventListener('click', () => {
-  const audio = document.getElementById('background-audio');
-  audio.muted = false;
-});
+    
 
     // Mettre à jour le compte à rebours toutes les secondes
     setInterval(updateCountdown, 1000);
