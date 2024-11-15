@@ -1,279 +1,319 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Compte à rebours - Collègue Théo</title>
-  <style>
-    body {
-      font-family: 'Permanent Marker', cursive;
-      text-align: center;
-      background: linear-gradient(to bottom, #87CEEB, #ADD8E6);
-      padding: 40px;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compte à rebours - Collègue Théo</title>
+    <style>
+        body {
+            font-family: 'Permanent Marker', cursive;
+            text-align: center;
+            background: linear-gradient(to bottom, #87CEEB, #ADD8E6);
+            padding: 40px;
+        }
 
-    h1 {
-      color: #4B0082;
-      margin-bottom: 20px;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    }
+        h1 {
+            color: #4B0082;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
 
-    #countdown {
-      font-size: 72px;
-      font-weight: bold;
-      color: #FF69B4;
-      margin-bottom: 20px;
-      text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
-    }
+        #countdown {
+            font-size: 72px;
+            font-weight: bold;
+            color: #FF69B4;
+            margin-bottom: 20px;
+            text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+        }
 
-    .confetti {
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      background-color: #FF69B4;
-      border-radius: 50%;
-      animation: confetti-fall 5s linear infinite;
-    }
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #FF69B4;
+            border-radius: 50%;
+            animation: confetti-fall 5s linear infinite;
+        }
 
-    @keyframes confetti-fall {
-      0% {
-        transform: translate(0, -100px) rotate(0deg);
-      }
-      100% {
-        transform: translate(random(1000) - 500px, 600px) rotate(360deg);
-      }
-    }
+        @keyframes confetti-fall {
+            0% {
+                transform: translate(0, -100px) rotate(0deg);
+            }
 
-    .bounce {
-      animation: bounce 1s infinite;
-    }
+            100% {
+                transform: translate(random(1000) - 500px, 600px) rotate(360deg);
+            }
+        }
 
-    .rotate {
-      animation: rotate 1s infinite linear;
-    }
+        .bounce {
+            animation: bounce 1s infinite;
+        }
 
-    .scale {
-      animation: scale 1s infinite;
-    }
+        .rotate {
+            animation: rotate 1s infinite linear;
+        }
 
-    @keyframes bounce {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
-      100% { transform: translateY(0); }
-    }
+        .scale {
+            animation: scale 1s infinite;
+        }
 
-    @keyframes rotate {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
 
-    @keyframes scale {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.2); }
-      100% { transform: scale(1); }
-    }
+            50% {
+                transform: translateY(-20px);
+            }
 
-    .illustration {
-	position: relative;
-	margin: 0 auto;
-	width : 716px;
-	height: 413px;
-	background : url("./illustration.jpg") no-repeat top center;
-}
- 
-.i-large,
-.i-medium,
-.i-small {
-	position : absolute;
-	top: 0; right: 0; bottom: 0; left: 0;
-}
- 
-.i-large {
-	background: url("./particules_large.png") repeat 0px 0px;
-	-webkit-animation: dropFlowParticles 2s linear infinite;
-	     -o-animation: dropFlowParticles 2s linear infinite;
-	        animation: dropFlowParticles 2s linear infinite;
-}
-.i-medium {
-	background: url("./particules_medium.png") repeat 0px 0px;
-	-webkit-animation: dropFlowParticles 12s linear infinite;
-	     -o-animation: dropFlowParticles 12s linear infinite;
-	        animation: dropFlowParticles 12s linear infinite;
-}
-.i-small {
-	background:url("./particules_small.png") repeat 0px 0px;
-	-webkit-animation: dropFlowParticles 27s linear infinite;
-	     -o-animation: dropFlowParticles 27s linear infinite;
-	        animation: dropFlowParticles 27s linear infinite;
-}
- 
-@-webkit-keyframes dropFlowParticles {
-	from { background-position: 0 0; }
-	to { background-position: 0 413px; }
-}
-@keyframes dropFlowParticles {
-	from { background-position: 0 0; }
-	to { background-position: 0 413px; }
-}
-  </style>
-  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes scale {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .illustration {
+            position: relative;
+            margin: 0 auto;
+            width: 716px;
+            height: 413px;
+            background: url("./illustration.jpg") no-repeat top center;
+        }
+
+        .i-large,
+        .i-medium,
+        .i-small {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        .i-large {
+            background: url("./particules_large.png") repeat 0px 0px;
+            -webkit-animation: dropFlowParticles 2s linear infinite;
+            -o-animation: dropFlowParticles 2s linear infinite;
+            animation: dropFlowParticles 2s linear infinite;
+        }
+
+        .i-medium {
+            background: url("./particules_medium.png") repeat 0px 0px;
+            -webkit-animation: dropFlowParticles 12s linear infinite;
+            -o-animation: dropFlowParticles 12s linear infinite;
+            animation: dropFlowParticles 12s linear infinite;
+        }
+
+        .i-small {
+            background: url("./particules_small.png") repeat 0px 0px;
+            -webkit-animation: dropFlowParticles 27s linear infinite;
+            -o-animation: dropFlowParticles 27s linear infinite;
+            animation: dropFlowParticles 27s linear infinite;
+        }
+
+        @-webkit-keyframes dropFlowParticles {
+            from {
+                background-position: 0 0;
+            }
+
+            to {
+                background-position: 0 413px;
+            }
+        }
+
+        @keyframes dropFlowParticles {
+            from {
+                background-position: 0 0;
+            }
+
+            to {
+                background-position: 0 413px;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 </head>
-<body>
-  <div class="illustration">
-    <div class="i-large"></div>
-    <div class="i-medium"></div>
-    <div class="i-small"></div>
- 
- 
-  <audio id="background-audio" src="./music.mp3" ></audio>
 
-  <h1>Compte à rebours jusqu'au départ du Collègue Théo</h1>
-  <div id="countdown">13456789 secondes</div>
-  <img src="
+<body>
+
+    <audio src="./music.mp3" controls></audio>
+
+
+
+
+    <h1>Compte à rebours jusqu'au départ du Collègue Théo</h1>
+    <div id="countdown">13456789 secondes</div>
+    <img src="
   https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ2R6a3VrajB2OTRxN3ZlbmF3aGtoN3liZDFzems2azk3ZXZtMnl2YSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gqBFypqpBANi9FbfhW/giphy.gif"
         alt="Collègue Théo" class="collegue-gif">
-      </div>
-  <script>
-    // Attendons que votre site web soit prêt
-document.addEventListener("DOMContentLoaded", function() {
-  // Création du containeur de script qui ajouter Particles.JS à votre site
-  let partJS=document.createElement('script');
-  partJS.setAttribute('src', 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js');
-  partJS.addEventListener('load', launchParticules);
-  document.body.appendChild(partJS);
-  // Création du conteneur qui recevera les flocons de neige
-  let snowJS=document.createElement('div');
-  snowJS.setAttribute('id', 'snow-js');
-  snowJS.setAttribute('style', 'position: absolute;width: 100%;height: 100%;z-index: -1;top:0px;');
-  document.body.appendChild(snowJS);
-  // Lancement des particules, avec Particles.JS
-  function launchParticules()
-  {
-        particlesJS("snow-js", {
-    particles: {
-      number: {
-        value: 52, // Réglez ici la quantité de flocons qui tombera
-        density: {
-          enable: true
+
+    <script>
+        // Attendons que votre site web soit prêt
+        document.addEventListener("DOMContentLoaded", function () {
+            // Création du containeur de script qui ajouter Particles.JS à votre site
+            let partJS = document.createElement('script');
+            partJS.setAttribute('src', 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js');
+            partJS.addEventListener('load', launchParticules);
+            document.body.appendChild(partJS);
+            // Création du conteneur qui recevera les flocons de neige
+            let snowJS = document.createElement('div');
+            snowJS.setAttribute('id', 'snow-js');
+            snowJS.setAttribute('style', 'position: absolute;width: 100%;height: 100%;z-index: -1;top:0px;');
+            document.body.appendChild(snowJS);
+            // Lancement des particules, avec Particles.JS
+            function launchParticules() {
+                particlesJS("snow-js", {
+                    particles: {
+                        number: {
+                            value: 52, // Réglez ici la quantité de flocons qui tombera
+                            density: {
+                                enable: true
+                            }
+                        },
+                        color: {
+                            value: Math.floor(Math.random() * 16777215).toString(16)
+                        },
+                        shape: {
+                            type: "circle",
+                            stroke: {
+                                width: 0,
+                                color: "#000000"
+                            },
+                            polygon: {
+                                nb_sides: 5
+                            }
+                        },
+                        opacity: {
+                            value: 0.5,
+                            random: true,
+                            anim: {
+                                enable: false,
+                                speed: 1, // Réglez ici la vitesse des flocons
+                                opacity_min: 0.1,
+                                sync: false
+                            }
+                        },
+                        size: {
+                            value: 5,
+                            random: true,
+                            anim: {
+                                enable: false,
+                                speed: 40,
+                                size_min: 0.1,
+                                sync: false
+                            }
+                        },
+                        line_linked: {
+                            enable: false,
+                            distance: 500,
+                            color: "#ffffff",
+                            opacity: 0.4,
+                            width: 2
+                        },
+                        move: {
+                            enable: true,
+                            speed: 1.5,
+                            direction: "bottom",
+                            random: false,
+                            straight: false,
+                            out_mode: "out",
+                            bounce: false,
+                            attract: {
+                                enable: false,
+                                rotateX: 600,
+                                rotateY: 1200
+                            }
+                        }
+                    },
+                    interactivity: {
+                        detect_on: "canvas",
+                        events: {
+                            onhover: {
+                                enable: false,
+                                mode: "bubble"
+                            },
+                            resize: true
+                        }
+                    },
+                    retina_detect: true
+                });
+            }
+        });
+
+        const targetDate = new Date('2025-03-14');
+
+        // Fonction pour mettre à jour l'affichage du compte à rebours
+        function updateCountdown() {
+            const now = new Date();
+            const timeRemaining = targetDate.getTime() - now.getTime();
+
+            if (timeRemaining <= 0) {
+                document.getElementById('countdown').textContent = '0 secondes';
+                confettiAnimation();
+                return;
+            }
+
+            const seconds = Math.floor(timeRemaining / 1000);
+            document.getElementById('countdown').textContent = `${seconds} secondes`;
+            animateSeconds(seconds);
         }
-      },
-      color: {
-        value: "#fff" // Réglez ici la couleur
-      },
-      shape: {
-        type: "circle",
-        stroke: {
-          width: 0,
-          color: "#000000"
-        },
-        polygon: {
-          nb_sides: 5
+
+        // Fonction pour appliquer une animation différente à chaque seconde
+        function animateSeconds(seconds) {
+            const countdownElement = document.getElementById('countdown');
+            countdownElement.classList.remove('bounce', 'rotate', 'scale');
+
+            if (seconds % 3 === 0) {
+                countdownElement.classList.add('bounce');
+            } else if (seconds % 3 === 1) {
+                countdownElement.classList.add('rotate');
+            } else {
+                countdownElement.classList.add('scale');
+            }
         }
-      },
-      opacity: {
-        value: 0.5,
-        random: true,
-        anim: {
-          enable: false,
-          speed: 1, // Réglez ici la vitesse des flocons
-          opacity_min: 0.1,
-          sync: false
+
+        // Fonction pour déclencher l'animation de confettis
+        function confettiAnimation() {
+            const container = document.body;
+            const confettiCount = 50;
+
+            for (let i = 0; i < confettiCount; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                container.appendChild(confetti);
+            }
         }
-      },
-      size: {
-        value: 5,
-        random: true,
-        anim: {
-          enable: false,
-          speed: 40,
-          size_min: 0.1,
-          sync: false
-        }
-      },
-      line_linked: {
-        enable: false,
-        distance: 500,
-        color: "#ffffff",
-        opacity: 0.4,
-        width: 2
-      },
-      move: {
-        enable: true,
-        speed: 1.5,
-        direction: "bottom",
-        random: false,
-        straight: false,
-        out_mode: "out",
-        bounce: false,
-        attract: {
-          enable: false,
-          rotateX: 600,
-          rotateY: 1200
-        }
-      }
-    },
-    interactivity: {
-      detect_on: "canvas",
-      events: {
-        onhover: {
-          enable: false,
-          mode: "bubble"
-        },
-        resize: true
-      }
-    },
-    retina_detect: true
-  });
-  }
-});
-     
-    const targetDate = new Date('2025-03-14');
 
-    // Fonction pour mettre à jour l'affichage du compte à rebours
-    function updateCountdown() {
-      const now = new Date();
-      const timeRemaining = targetDate.getTime() - now.getTime();
 
-      if (timeRemaining <= 0) {
-        document.getElementById('countdown').textContent = '0 secondes';
-        confettiAnimation();
-        return;
-      }
+        // Mettre à jour le compte à rebours toutes les secondes
+        setInterval(updateCountdown, 1000);
 
-      const seconds = Math.floor(timeRemaining / 1000);
-      document.getElementById('countdown').textContent = `${seconds} secondes`;
-      animateSeconds(seconds);
-    }
 
-    // Fonction pour appliquer une animation différente à chaque seconde
-    function animateSeconds(seconds) {
-      const countdownElement = document.getElementById('countdown');
-      countdownElement.classList.remove('bounce', 'rotate', 'scale');
-
-      if (seconds % 3 === 0) {
-        countdownElement.classList.add('bounce');
-      } else if (seconds % 3 === 1) {
-        countdownElement.classList.add('rotate');
-      } else {
-        countdownElement.classList.add('scale');
-      }
-    }
-
-    // Fonction pour déclencher l'animation de confettis
-    function confettiAnimation() {
-      const container = document.body;
-      const confettiCount = 50;
-
-      for (let i = 0; i < confettiCount; i++) {
-        const confetti = document.createElement('div');
-        confetti.classList.add('confetti');
-        container.appendChild(confetti);
-      }
-    }
-    
-
-    // Mettre à jour le compte à rebours toutes les secondes
-    setInterval(updateCountdown, 1000);
-  </script>
+    </script>
 </body>
+
 </html>
