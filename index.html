@@ -79,7 +79,7 @@
   <div class="confetti"></div>
   <div class="confetti"></div>
   <div class="confetti"></div>
-  <audio controls src="./music.mp3" autoplay class="display:none"></audio>
+  <audio controls src="./music.mp3" autoplay loop></audio>
   
   <h1>Compte à rebours jusqu'au départ du Collègue Théo</h1>
   <div id="countdown">13456789 secondes</div>
@@ -136,5 +136,10 @@
     // Mettre à jour le compte à rebours toutes les secondes
     setInterval(updateCountdown, 1000);
   </script>
+  <style>
+    audio {
+      display: none;
+    }
+  </style>
 </body>
 </html>
